@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌌 Center everything properly */
+body {
+    background-image: url("bg.jpg");  
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat;    
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 🖼️ GIF styling */
+img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+/* 📦 Container */
+.container {
+    background: rgba(0,0,0,0.5);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* 🧠 Heading */
+.container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* 🔘 Button base */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+
+.heart-btn {
+    position: relative;
+    background: #ff4d6d;
+    color: white;
+    overflow: hidden;
+}
+
+.heart-btn:hover {
+    transform: scale(1.1);
+}
+
+
+.hearts {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+}
+
+.hearts::before,
+.hearts::after {
+    content: "❤️ ❤️ ❤️";
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.heart-btn:hover .hearts::before {
+    animation: floatUp 1s ease-out forwards;
+}
+
+.heart-btn:hover .hearts::after {
+    animation: floatUp 1s ease-out 0.2s forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -180%) scale(1.6);
+    }
+}
+
+
+.no-btn {
+    background: #333;
+    color: white;
+    position: relative;
+}
+
+
+.no-btn:hover {
+    transform: scale(1.1);
+}
+/* 🎉 Common popup style */
+.popup {
+    position: absolute;
+    width: 120px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s ease;
+    pointer-events: none;
+}
+
+/* 📍 Starting positions (centered behind card) */
+.gif1 { top: 50%; left: 50%; }
+.gif2 { top: 50%; left: 50%; }
+.gif3 { top: 50%; left: 50%; }
+
+/* 🚀 When card opens → move outward */
+.card.open ~ .gif1 {
+    transform: translate(-200px, -150px) scale(1);
+    opacity: 1;
+}
+
+.card.open ~ .gif2 {
+    transform: translate(150px, -180px) scale(1);
+    opacity: 1;
+}
+
+.card.open ~ .gif3 {
+    transform: translate(0px, 150px) scale(1);
+    opacity: 1;
+}

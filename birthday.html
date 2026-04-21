@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foldable Card 🎂</title>
+<link rel="stylesheet" href="birthday.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="scene">
+
+    <div class="card" onclick="openCard()">
+
+        <div class="inside">
+            <h1>🎉 Happy Birthday TWINNNNN 🎂</h1>
+            <p>
+                <span class="highlight">VERY VERY HAPPY</span> BIRTHDAY 💖  YRRR ❤️  
+                I COULDNT FIND A BETTER GIFT THAN THIS CARD, HOPE YOU LIKE IT!
+                WISHING YOU A WONDERFUL YEAR AHEAD WITH LOTS OF DIET COKE 🥤
+                AND CHATPATA KHANA 😋😋  
+                HAPPY BIRTHDAY PATAGOTITAN 🦕🦕
+            </p>
+        </div>
+
+        <div class="cover">
+            <h2>🎁 Open Me</h2>
+        </div>
+
+    </div>
+
+    <!-- 🎉 POPUP GIFS (NOW INSIDE SAME SCENE) -->
+    <img src="Valentines Day Love GIF by Gwyneth Draws.gif" class="popup gif1">
+    <img src="Feliz Cumple Happy Birthday GIF by DINOSALLY.gif" class="popup gif2">
+
+
+</div>
+
+<script>
+function openCard() {
+    document.querySelector(".card").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

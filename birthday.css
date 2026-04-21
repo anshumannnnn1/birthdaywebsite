@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(BG2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+
+
+.scene {
+    position: relative;
+    width: 600px;
+    height: 400px;
+}
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+/* 🎁 COVER */
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    transform-origin: left;
+    transition: transform 1s ease;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+
+
+.inside {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    background: white;
+    border-radius: 20px 0 0 20px;
+
+    padding: 30px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.08);
+}
+
+.inside h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: #ff4d6d;
+    margin-bottom: 12px;
+}
+
+.inside p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+
+    max-width: 240px;
+}
+
+.card.open .cover {
+    transform: rotateY(-150deg);
+}
+
+
+
+.popup {
+    position: absolute;
+    width: 120px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.8s ease;
+    pointer-events: none;
+
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+}
+
+
+.gif1, .gif2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+
+.card.open ~ .gif1 {
+    transform: translate(350px, -200px) scale(1);
+    OPACITY: 1;
+}
+
+
+.card.open ~ .gif2 {
+    transform: translate(200px, -100px) scale(1);
+    opacity: 1;
+}
+.highlight {
+    color: #ff4d6d;
+    font-weight: 600;
+}
+.inside {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.card.open .inside {
+    opacity: 1;
+}
